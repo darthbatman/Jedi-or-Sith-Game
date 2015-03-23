@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>Jedi or Sith</title>
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	</head>
+	<body>
+		<h1 style="text-align: center;" id="gameState">Game in progress...</h1>
+		<p style="text-align: center;">Score: 0</p>
+		<img data-affiliation="jedi" id="myImage" style="margin-left: 40%; width: 300px; height: 400px; "src="http://img3.wikia.nocookie.net/__cb20100220001352/starwars/images/6/61/Jedi_Master_Belth_Allusis.jpg" />
+
+		<br>
+		<div style="text-align: center;">
+			<button style="height: 150px; width: 600px;" onclick="jediTF()">Jedi</button>
+			<button style="height: 150px; width: 600px;" onclick="sithTF()">Sith</button>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		
+		<script type="text/javascript">
+		var score = 0;
+		function jediTF() {
+			if ($("#myImage").attr("data-affiliation") == "jedi"){
+				score += 1;
+				alert("You are correct.");
+			}
+			else {
+				alert("You are incorrect.");
+			}
+		
+			switch (score) {
+				case 1:
+					$("#myImage").attr("src", "http://img3.wikia.nocookie.net/__cb20100220063412/starwars/images/7/73/JediKnight-TOR.jpg");
+					$("#myImage").attr("data-affiliation", "jedi");
+					break;
+				case 2:
+					$("#myImage").attr("src", "http://fc04.deviantart.net/fs15/f/2007/103/7/9/Jedi_Knight_by_Eruantien_Fett.png");
+					$("#myImage").attr("data-affiliation", "jedi");
+					break;
+				case 3:
+					$("#myImage").attr("src", "http://img2.wikia.nocookie.net/__cb20081018045813/starwars/images/e/ec/RahmKota_bg.jpg");
+					$("#myImage").attr("data-affiliation", "jedi");
+					break;
+					case 4:
+					$("#myImage").attr("src", "http://img3.wikia.nocookie.net/__cb20131002192902/starwars/images/f/f0/SithWarrior-TOR.jpg");
+					$("#myImage").attr("data-affiliation", "sith");
+					break;
+			}
+
+			$('p').text("Score: " + score);
+
+		}
+		function sithTF() {
+			if ($("#myImage").attr("data-affiliation") == "sith"){
+				score += 1;
+				alert("You are correct.");
+			}
+			else {
+				alert("You are incorrect.");
+			}
+		
+			switch (score) {
+				case 5:
+					$("#myImage").attr("src", "http://static.comicvine.com/uploads/original/5/52496/1061243-sithstalkerarmor_tfuuse.jpg");
+					$("#myImage").attr("data-affiliation", "sith");
+					break;
+				case 6:
+					$("#myImage").attr("src", "http://fc08.deviantart.net/fs47/i/2009/194/5/3/Jedi_by_M_for_moddel.jpg");
+					$("#myImage").attr("data-affiliation", "sith");
+					break;
+				case 7:
+					$('#gameState').text("You Win!");
+			}
+
+			$('p').text("Score: " + score);
+
+		}
+		</script>
+	</body>
+</html>
